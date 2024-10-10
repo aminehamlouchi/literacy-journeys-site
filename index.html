@@ -8,21 +8,28 @@
     <style>
         body {
             font-family: 'Comic Sans MS', cursive, sans-serif;
-            background-color: #ffcc99;
+            background: linear-gradient(to right, #ffcc99, #ff6699);
             line-height: 1.8;
             color: #333;
+            animation: backgroundAnimation 10s infinite alternate;
+        }
+        @keyframes backgroundAnimation {
+            0% { background: linear-gradient(to right, #ffcc99, #ff6699); }
+            50% { background: linear-gradient(to right, #ff99ff, #66ccff); }
+            100% { background: linear-gradient(to right, #ffcc99, #ff6699); }
         }
         .container {
             max-width: 1000px;
             margin: auto;
             padding: 30px;
             background: #fff3e6;
-            border: 4px double #ff6600;
-            box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.3);
+            border: 5px double #ff66cc;
+            box-shadow: 0px 0px 35px rgba(0, 0, 0, 0.4);
         }
         h1, h2 {
             color: #ff4500;
-            text-shadow: 3px 3px #ffa07a;
+            text-shadow: 3px 3px 4px #ffa07a, 2px 2px 2px #ff33cc;
+            font-family: 'Impact', sans-serif;
         }
         .nav {
             display: flex;
@@ -30,34 +37,53 @@
             background: #333;
             padding: 20px;
             border-radius: 25px;
+            box-shadow: 0px 0px 20px rgba(255, 0, 150, 0.6);
             margin-bottom: 25px;
         }
         .nav a {
             color: #ffcc99;
             text-decoration: none;
             font-weight: bold;
-            font-size: 1.3em;
+            font-size: 1.5em;
+            transition: color 0.3s ease-in-out;
         }
         .nav a:hover {
-            color: #ff4500;
+            color: #ff33cc;
         }
         .member-page {
             margin-top: 40px;
             padding: 25px;
             background: #fff;
-            border: 3px dashed #ff6600;
-            border-radius: 20px;
+            border: 3px dotted #ff33cc;
+            border-radius: 30px;
+            box-shadow: 0px 0px 30px rgba(255, 105, 180, 0.6);
+            transform: rotate(-1deg);
+            transition: transform 0.3s ease;
+        }
+        .member-page:hover {
+            transform: rotate(0deg);
         }
         img {
             max-width: 100%;
             height: auto;
-            border: 5px solid #ff4500;
-            border-radius: 15px;
+            border: 5px double #ff4500;
+            border-radius: 20px;
             margin-top: 20px;
+            filter: drop-shadow(5px 5px 15px #ff33cc);
         }
         p {
-            font-size: 1.2em;
+            font-size: 1.3em;
             margin-bottom: 20px;
+            color: #330033;
+        }
+        .footer {
+            margin-top: 50px;
+            text-align: center;
+            padding: 10px;
+            background: #ff33cc;
+            color: white;
+            font-size: 1.1em;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
         }
     </style>
 </head>
@@ -112,6 +138,9 @@
             <p>Our collective literacy narratives illustrate how personal, familial, and educational influences shape literacy development. Each of us has experienced growth and transformation in our own unique ways—Amine with his devotion to religious texts, Logan through his imaginative stories and creative growth, Sydney in her rediscovery of literature's magic, and Elum in overcoming his challenges to turn literacy into his own personal victory. These journeys highlight the importance of adaptability, resilience, and the power of support from those around us.</p>
             <p>Literacy is more than just reading and writing; it's about making connections, seeking knowledge, and growing as individuals. We hope our stories inspire you to reflect on your own literacy journey and the incredible people and experiences that have helped shape it.</p>
         </section>
+    </div>
+    <div class="footer">
+        Thank you for joining us on this colorful journey! Stay curious and keep reading!
     </div>
 </body>
 </html>
