@@ -67,19 +67,37 @@
         .hero-section {
             text-align: center;
             padding: 60px 20px;
-            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            background: url('Cover.webp') no-repeat center center/cover;
             border-radius: 15px;
             margin-bottom: 30px;
             color: var(--text-light);
             box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            transition: backdrop-filter 0.5s ease;
+        }
+        .hero-section.scrolled::after {
+            backdrop-filter: blur(8px);
         }
         .hero-section h1 {
             font-size: 2.8em;
             font-weight: 600;
+            z-index: 1;
+            position: relative;
         }
         .hero-section p {
             font-size: 1.2em;
             margin: 20px 0;
+            z-index: 1;
+            position: relative;
         }
         .hero-section .cta-button {
             display: inline-block;
@@ -90,6 +108,8 @@
             text-decoration: none;
             border-radius: 50px;
             transition: all 0.3s;
+            z-index: 1;
+            position: relative;
         }
         .hero-section .cta-button:hover {
             background: #e5b700;
@@ -104,8 +124,13 @@
             position: relative;
             transition: transform 0.3s;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: 1fr;
             gap: 20px;
+        }
+        @media (min-width: 768px) {
+            section.member-page {
+                grid-template-columns: 1fr 2fr;
+            }
         }
         section.member-page:hover {
             transform: translateY(-10px);
@@ -117,14 +142,18 @@
         }
         section.member-page .content {
             order: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
         section.member-page img {
-            max-width: 100%;
-            height: auto;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
             border-radius: 15px;
             margin: auto;
             box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-            grid-row: span 2;
+            max-height: 300px;
         }
         .footer {
             margin-top: 50px;
@@ -203,17 +232,4 @@
                 <p>Elum’s literacy journey was anything but conventional. Growing up, Elum faced challenges with focus due to ADD/ADHD, which made reading a daunting task. The words on the page often seemed to dance around, and staying focused felt like an impossible task. But Elum's family was determined to support him. His mom would break down reading sessions into smaller, more manageable pieces, and they would celebrate every little achievement—whether it was finishing a chapter or understanding a difficult word.</p>
                 <img src="elum2.webp" alt="Kid Struggling to Focus">
                 <p>Brandt highlights how "sponsorship is a relationship, a negotiated power dynamic between the sponsor and the learner." This notion perfectly captures Elum’s literacy journey, as his parents played the role of supportive sponsors in his pursuit of literacy.</p>
-                <p>Elum also developed his own strategies—he used colorful sticky notes, highlighters, and even voice recordings to help himself grasp and retain information. Over time, he discovered that he had a unique strength: an ability to focus intensely on key details when given the right tools. By high school, Elum had turned his struggles into strengths, using his focus techniques to succeed not only in reading but in other subjects as well. He realized that literacy isn’t about fitting into a traditional mold; it’s about finding what works for you and embracing your personal journey.</p>
-            </div>
-        </section>
-
-        <section id="conclusion" class="member-page">
-            <h2>Conclusion</h2>
-            <div class="content">
-                <p>Our collective literacy narratives illustrate how personal, familial, and educational influences shape literacy development. Each of us has experienced growth and transformation in our own unique ways—Amine with his devotion to religious texts, Logan through his imaginative stories and creative growth, Sydney in her rediscovery of literature's magic, and Elum in overcoming his challenges to turn literacy into his own personal victory. These journeys highlight the importance of adaptability, resilience, and the power of support from those around us.</p>
-                <p>Literacy is more than just reading and writing; it's about making connections, seeking knowledge, and growing as individuals. We hope our stories inspire you to reflect on your own literacy journey and the incredible people and experiences that have helped shape it.</p>
-            </div>
-        </section>
-    </div>
-    <div class="footer">
-        <i
+                <p>Elum also developed his own strategies—he used colorful sticky notes, highlighters, and even voice recordings to help himself grasp and retain information. Over time, he discovered that he had a unique strength: an ability to focus intensely on key details when given the right tools. By high school, Elum had turned his struggles into strengths, using his focus techniques to succeed not only in reading but in other subjects as
