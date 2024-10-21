@@ -3,203 +3,191 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pathways to Literacy: A Multimodal Exploration</title>
+    <title>Pathways to Literacy - Modern Exploration</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        :root {
+            --main-color: #ff6f61;
+            --secondary-color: #ffd700;
+            --background-light: rgba(255, 255, 255, 0.85);
+            --background-dark: #1a1a1a;
+            --text-light: #ffffff;
+            --text-dark: #333;
+        }
         body {
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
-            line-height: 1.8;
-            color: #333;
+            background: var(--background-light);
+            color: var(--text-dark);
             margin: 0;
             padding: 0;
-            animation: fadeIn 1.5s;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            transition: background 0.3s, color 0.3s;
         }
         .container {
             max-width: 1200px;
             margin: auto;
-            padding: 30px;
-            background: rgba(255, 255, 255, 0.85);
+            padding: 20px;
+            background: var(--background-light);
             border-radius: 15px;
-            box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.25);
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
             overflow: hidden;
             backdrop-filter: blur(10px);
         }
-        h1, h2 {
-            color: #ff6f61;
-            font-family: 'Poppins', sans-serif;
-            text-align: center;
-            font-weight: 600;
-            position: relative;
-        }
-        h1::after, h2::after {
-            content: '';
-            width: 80px;
-            height: 4px;
-            background: #ffd700;
-            display: block;
-            margin: 10px auto;
-            border-radius: 2px;
-        }
-        .nav {
+        header {
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             align-items: center;
-            background: #ff6f61;
             padding: 20px;
+            background: var(--main-color);
             border-radius: 10px;
-            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-            margin-bottom: 40px;
+            box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
         }
-        .nav a {
-            color: #ffffff;
+        header .logo {
+            color: var(--text-light);
+            font-weight: 600;
+            font-size: 1.5em;
+            text-decoration: none;
+        }
+        header nav {
+            display: flex;
+            gap: 15px;
+        }
+        header nav a {
+            color: var(--text-light);
             text-decoration: none;
             font-weight: 600;
+            font-size: 1.1em;
+            transition: all 0.3s;
+        }
+        header nav a:hover {
+            color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+        .hero-section {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            border-radius: 15px;
+            margin-bottom: 30px;
+            color: var(--text-light);
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        .hero-section h1 {
+            font-size: 2.8em;
+            font-weight: 600;
+        }
+        .hero-section p {
             font-size: 1.2em;
-            transition: all 0.3s ease-in-out;
+            margin: 20px 0;
         }
-        .nav a:hover {
-            color: #ffd700;
-            transform: scale(1.1);
+        .hero-section .cta-button {
+            display: inline-block;
+            padding: 15px 25px;
+            background: var(--secondary-color);
+            color: var(--main-color);
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s;
         }
-        .member-page {
-            margin-top: 40px;
+        .hero-section .cta-button:hover {
+            background: #e5b700;
+            transform: translateY(-5px);
+        }
+        section.member-page {
+            margin-bottom: 40px;
             padding: 25px;
             background: linear-gradient(135deg, #fef9d7 0%, #d299c2 100%);
             border-radius: 15px;
             box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease-in-out;
             position: relative;
+            transition: transform 0.3s;
         }
-        .member-page:hover {
+        section.member-page:hover {
             transform: translateY(-10px);
         }
-        img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 15px;
-            margin-top: 20px;
-            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-        }
-        p {
-            font-size: 1.15em;
-            margin-bottom: 25px;
-            color: #555;
+        section.member-page h2 {
+            font-size: 2.2em;
+            color: var(--main-color);
         }
         .footer {
             margin-top: 50px;
             text-align: center;
             padding: 20px;
-            background: #ff6f61;
-            color: white;
+            background: var(--main-color);
+            color: var(--text-light);
             font-size: 1.1em;
             box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
         }
-        .footer i {
-            margin-right: 8px;
-        }
-        /* Button Style for CTA */
-        .cta-button {
-            display: inline-block;
-            padding: 15px 30px;
-            background: #ffd700;
-            color: #ff6f61;
-            font-weight: 600;
-            text-decoration: none;
-            border-radius: 50px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-        .cta-button:hover {
-            background: #e5b700;
-            transform: translateY(-5px);
-        }
-        /* JavaScript Animation for Navigation Bar */
-        .nav a::after {
-            content: '';
-            display: block;
-            width: 0;
-            height: 3px;
-            background: #ffd700;
-            transition: width .3s;
-        }
-        .nav a:hover::after {
-            width: 100%;
-            transition: width .3s;
+        .toggle-mode {
+            cursor: pointer;
+            padding: 5px;
+            font-size: 1.5em;
+            color: var(--text-light);
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <nav class="nav">
-            <a href="#">Home</a>
+    <header>
+        <a href="#" class="logo">Literacy Journeys</a>
+        <nav>
+            <a href="#home">Home</a>
             <a href="#amine">Amine</a>
             <a href="#logan">Logan</a>
             <a href="#sydney">Sydney</a>
             <a href="#elum">Elum</a>
             <a href="#conclusion">Conclusion</a>
         </nav>
-
-        <section id="home">
-            <h1>Pathways to Literacy: A Multimodal Exploration of Our Literacy Journeys</h1>
-            <img src="Cover.webp" alt="Open Book Cover Image">
-            <p>Welcome to our collaborative exploration of literacy! This website showcases the unique literacy journeys of our group members: Amine, Logan, Sydney, and Elum. Each of us has been shaped by different experiences, and through these narratives, we aim to reflect on the powerful influence of family, education, and personal challenges in our literacy growth.</p>
-            <p>The heart of this project revolves around two central themes: <b>Family Influence</b> and <b>Growth & Transformation</b>. We invite you to dive into our stories and join us in celebrating the role of literacy in our lives.</p>
-            <div style="text-align: center; margin-top: 40px;">
-                <a href="#conclusion" class="cta-button">Discover More About Our Journeys</a>
-            </div>
+        <div class="toggle-mode"><i class="fas fa-adjust"></i></div>
+    </header>
+    <div class="container">
+        <section class="hero-section" id="home">
+            <h1>Welcome to Our Literacy Journeys</h1>
+            <p>Explore how family, education, and personal challenges have shaped our literacy experiences. Join us on this journey of growth, transformation, and the pursuit of knowledge.</p>
+            <a href="#conclusion" class="cta-button">Discover More About Our Journeys</a>
         </section>
-
+        
         <section id="amine" class="member-page">
             <h2>Amine's Literacy Journey</h2>
-            <p>Home literacy practices are extremely important in developing early language and literacy skills (Curry, Reeves, & McIntyre, 2016). Amine's journey into literacy was deeply intertwined with his religious upbringing. Growing up in a household rich with Islamic teachings, Amine found himself drawn to the words of scholars like Ibn Taymiyyah. From a young age, Amine would sit beside his grandfather, who read aloud from classical Islamic texts. Those moments weren’t just about listening to words—they were a bonding experience, full of warmth, curiosity, and a sense of connection to a deeper spiritual tradition.</p>
-            <img src="amine.webp" alt="Classical Islamic Texts">
-            <p>As Amine grew older, his love for reading turned into a passion for seeking knowledge. He began reading books on Islamic philosophy, law, and history, which not only expanded his understanding of the world but also honed his ability to think critically. His journey wasn’t without challenges—there were moments when the language felt complex and overwhelming, but his drive to understand kept him going. The teachings of scholars inspired him to view literacy as a lifelong pursuit, where every word read is a step toward personal and spiritual growth.</p>
-            <img src="amine2.webp" alt="Books Amine Has Studied">
-            <p><i>"The essence of knowledge is to know what you do not know & to seek it with sincerity." - Ibn Taymiyyah.</i></p>
+            <p>Amine's journey is deeply rooted in religious teachings, where early exposure to Islamic texts inspired a lifelong passion for seeking knowledge and self-growth.</p>
         </section>
 
         <section id="logan" class="member-page">
             <h2>Logan's Literacy Journey</h2>
-            <p>Logan’s early literacy was shaped not only by his family but also by sponsorship—a negotiated power dynamic between the sponsor and the learner, as Brandt describes. Logan's journey began with bedtime stories—those magical tales of mischief and wonder from Dr. Seuss. His mom’s lively voice brought each character to life, and these stories quickly became the highlight of Logan's evenings. Inspired by these imaginative adventures, Logan started creating his own stories, scribbling them down in colorful notebooks with doodles to match. He loved the feeling of bringing his own ideas to life and sharing them with his family, who always cheered him on.</p>
-            <img src="logan.webp" alt="Library Books">
-            <img src="logan2.webp" alt="Dr. Seuss Book">
-            <p>When Logan reached middle school, a local librarian took notice of his love for storytelling. She introduced him to a broader range of literature—fantasy novels, mysteries, and graphic novels. Logan would spend hours at the library, exploring different genres and learning about different writing styles. His passion for creative writing evolved, and in high school, Logan faced the challenge of shifting to more structured academic writing. While it was difficult at first to leave behind the playful freedom of his early stories, Logan eventually found a way to balance creativity with structure, making his essays unique and engaging.</p>
+            <p>Logan discovered his love for reading through bedtime stories and grew into an imaginative storyteller, always eager to create and share new worlds.</p>
         </section>
 
         <section id="sydney" class="member-page">
             <h2>Sydney's Literacy Journey</h2>
-            <p>Sydney's love for reading was a family tradition. Her grandmother, an avid reader, always had a book in her hands and loved sharing stories from her own childhood. Sydney’s mother, a teacher, would fill their home with books—picture books, classics, fairy tales—anything that could spark a child's imagination. Reading was never a chore; it was an adventure shared between generations. Sydney would spend lazy Sunday afternoons with her grandmother, listening to stories while the scent of freshly baked cookies filled the air.</p>
-            <img src="sydney.webp" alt="Family Reading Together">
-            <img src="sydney2.webp" alt="Grandma Bookshelf">
-            <p>"Home literacy practices are extremely important in developing early language and literacy skills" (Curry, Reeves, & McIntyre, 2016).</p>
-            <p>However, high school brought new challenges. A discouraging teacher made her feel that her love for literature wasn’t valuable, and Sydney almost stopped reading entirely. It was her mother who gently nudged her back towards her passion—introducing her to books that resonated with her teenage struggles and helped her see herself reflected in the characters. Slowly, Sydney regained her love for reading, finding solace and strength in the pages of novels that spoke to her journey of self-discovery.</p>
+            <p>Sydney's love for reading blossomed with family traditions, and despite setbacks, she rediscovered her passion for literature, finding strength in the stories she read.</p>
         </section>
 
         <section id="elum" class="member-page">
             <h2>Elum's Literacy Journey</h2>
-            <p>Elum’s literacy journey was anything but conventional. Growing up, Elum faced challenges with focus due to ADD/ADHD, which made reading a daunting task. The words on the page often seemed to dance around, and staying focused felt like an impossible task. But Elum's family was determined to support him. His mom would break down reading sessions into smaller, more manageable pieces, and they would celebrate every little achievement—whether it was finishing a chapter or understanding a difficult word.</p>
-            <img src="elum.webp" alt="Focus Strategies">
-            <img src="elum2.webp" alt="Kid Struggling to Focus">
-            <p>Brandt highlights how "sponsorship is a relationship, a negotiated power dynamic between the sponsor and the learner." This notion perfectly captures Elum’s literacy journey, as his parents played the role of supportive sponsors in his pursuit of literacy.</p>
-            <p>Elum also developed his own strategies—he used colorful sticky notes, highlighters, and even voice recordings to help himself grasp and retain information. Over time, he discovered that he had a unique strength: an ability to focus intensely on key details when given the right tools. By high school, Elum had turned his struggles into strengths, using his focus techniques to succeed not only in reading but in other subjects as well. He realized that literacy isn’t about fitting into a traditional mold; it’s about finding what works for you and embracing your personal journey.</p>
+            <p>Elum faced challenges with focus but developed unique strategies to succeed, proving that literacy is about embracing one's personal journey and overcoming obstacles.</p>
         </section>
 
         <section id="conclusion" class="member-page">
             <h2>Conclusion</h2>
-            <p>Our collective literacy narratives illustrate how personal, familial, and educational influences shape literacy development. Each of us has experienced growth and transformation in our own unique ways—Amine with his devotion to religious texts, Logan through his imaginative stories and creative growth, Sydney in her rediscovery of literature's magic, and Elum in overcoming his challenges to turn literacy into his own personal victory. These journeys highlight the importance of adaptability, resilience, and the power of support from those around us.</p>
-            <p>Literacy is more than just reading and writing; it's about making connections, seeking knowledge, and growing as individuals. We hope our stories inspire you to reflect on your own literacy journey and the incredible people and experiences that have helped shape it.</p>
+            <p>Our journeys show the diverse ways literacy develops—shaped by family, personal challenges, and the drive to grow. We hope our stories inspire you to reflect on your own literacy journey.</p>
         </section>
     </div>
     <div class="footer">
-        <i class="fas fa-book-reader"></i> Thank you for joining us on this journey! Stay curious and keep reading!
+        <i class="fas fa-book-reader"></i> Thank you for joining us on our journey! Keep reading and stay curious!
     </div>
+    <script>
+        document.querySelector('.toggle-mode').addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            if (document.body.classList.contains('dark-mode')) {
+                document.body.style.background = 'var(--background-dark)';
+                document.body.style.color = 'var(--text-light)';
+            } else {
+                document.body.style.background = 'var(--background-light)';
+                document.body.style.color = 'var(--text-dark)';
+            }
+        });
+    </script>
 </body>
 </html>
